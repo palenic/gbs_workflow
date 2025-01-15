@@ -1,0 +1,33 @@
+image: gitpod/workspace-base
+# image: condaforge/mambaforge:24.7.1-0
+
+tasks:
+- name: install mamba
+  init: |
+    cd /workspace
+    wget "https://github.com/conda-forge/miniforge/releases/download/24.3.0-0/Mambaforge-24.3.0-0-Linux-x86_64.sh"
+    bash Mambaforge-24.3.0-0-Linux-x86_64.sh -b -p /workspace/mambaforge && rm Mambaforge-24.3.0-0-Linux-x86_64.sh
+
+    /workspace/mambaforge/bin/mamba init bash
+    source ${HOME}/.bashrc
+    mamba create -n qcenv -c bioconda multiqc 
+    cd /workspace
+    wget "https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip"
+
+    gp sync-done bundle
+    
+- name: activate mamba
+  init: gp sync-await bundle # Wait for previous 'inits' to complete
+  command: |
+    cd /workspace
+    /workspace/mambaforge/bin/mamba init bash
+    source ~/.bashrc 
+    mamba activate qcenv
+    
+    export PATH=/workspace/bin:"$PATH"
+
+vscode:
+  extensions:
+    - anwar.papyrus-pdf
+
+workspaceLocation: "/workspace"
