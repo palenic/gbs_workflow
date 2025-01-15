@@ -23,11 +23,7 @@ tasks:
     /workspace/mambaforge/bin/mamba init bash
     source ~/.bashrc 
     mamba activate qcenv
-    
+    unzip fastqc_v0.12.1.zip
     export PATH=/workspace/bin:"$PATH"
-
-vscode:
-  extensions:
-    - anwar.papyrus-pdf
 
 workspaceLocation: "/workspace"
