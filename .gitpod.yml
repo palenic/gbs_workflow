@@ -26,8 +26,5 @@ tasks:
     
     export PATH=/workspace/bin:"$PATH"
 
-vscode:
-  extensions:
-    - anwar.papyrus-pdf
 
 workspaceLocation: "/workspace"
