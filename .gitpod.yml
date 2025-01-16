@@ -36,8 +36,8 @@ tasks:
     export PATH=/workspace/software/stacks-2.66/bin:"$PATH"
     cd /workspace/gbs_workflow
     cd 00_fastq
-    wget "https://unimi2013-my.sharepoint.com/:u:/g/personal/chiara_paleni_unimi_it/EfHYMcHhXhFDuesStBsRFJIBXusFgOsDbnZzxJuhn6RTDg?e=cmhz6x&download=1"
-    wget" https://unimi2013-my.sharepoint.com/:u:/g/personal/chiara_paleni_unimi_it/ERP4kPuAhJ5Jt3tc5hZVEWEBHNbLzWV4nwWIVxLHzhXVzA?e=yfiLew&download=1"
+    wget "https://unimi2013-my.sharepoint.com/:u:/g/personal/chiara_paleni_unimi_it/EfHYMcHhXhFDuesStBsRFJIBXusFgOsDbnZzxJuhn6RTDg?e=cmo2Sx&download=1" -O read1.fq.gz
+    wget "https://unimi2013-my.sharepoint.com/:u:/g/personal/chiara_paleni_unimi_it/ERP4kPuAhJ5Jt3tc5hZVEWEBHNbLzWV4nwWIVxLHzhXVzA?e=1fkzLO&download=1" -O read2.fq.gz
     cd ..
 
 workspaceLocation: "/workspace"
