@@ -9,7 +9,7 @@ tasks:
     bash Mambaforge-24.3.0-0-Linux-x86_64.sh -b -p /workspace/mambaforge && rm Mambaforge-24.3.0-0-Linux-x86_64.sh
     /workspace/mambaforge/bin/mamba init bash
     source ${HOME}/.bashrc
-    mamba create -n qcenv -c bioconda multiqc -y 
+    mamba create -n gbs_env -c bioconda multiqc -y 
     #    gp sync-done bundle  
     # - name: activate mamba
     #  init: gp sync-await bundle # Wait for previous 'inits' to complete
@@ -21,7 +21,7 @@ tasks:
     #- name: install fastqc and stacks
     #  init: |
     #    gp sync-await bundle # Wait for previous 'inits' to complete
-    mamba activate qcenv
+    mamba activate gbs_env
     mkdir software
     cd software
     wget "https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip"
@@ -34,5 +34,6 @@ tasks:
     export PATH=/workspace/bin:"$PATH"
     export PATH=/workspace/software/FastQC:"$PATH"
     export PATH=/workspace/software/stacks-2.66/bin:"$PATH"
-    
+    cd /workspace/gbs_workflow
+
 workspaceLocation: "/workspace"
