@@ -13,13 +13,13 @@ tasks:
     mamba create -n qcenv -c bioconda multiqc -y 
     gp sync-done bundle
     
-#- name: activate mamba
-#  init: gp sync-await bundle # Wait for previous 'inits' to complete
-#  command: |
-#    cd /workspace
-#    /workspace/mambaforge/bin/mamba init bash
-#    source ~/.bashrc 
-#    gp sync-done bundle
+- name: activate mamba
+  init: gp sync-await bundle # Wait for previous 'inits' to complete
+  command: |
+    cd /workspace
+    /workspace/mambaforge/bin/mamba init bash
+    source ~/.bashrc 
+    gp sync-done bundle
     
 - name: install fastqc and stacks
   init: |
@@ -30,7 +30,7 @@ tasks:
     wget "https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip"
     wget "https://catchenlab.life.illinois.edu/stacks/source/stacks-2.68.tar.gz"
     unzip fastqc_v0.12.1.zip
-    tar -xfvz stacks-2.68.tar.gz
+    tar -xvzf stacks-2.68.tar.gz
     cd stacks-2.68
     ./configure
     make
