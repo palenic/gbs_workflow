@@ -1,4 +1,4 @@
-image: gitpod/workspace-base
+image: gitpod/workspace-java-23
 # image: condaforge/mambaforge:24.7.1-0
 
 tasks:
