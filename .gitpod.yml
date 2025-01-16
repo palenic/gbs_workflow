@@ -7,20 +7,17 @@ tasks:
     cd /workspace
     wget "https://github.com/conda-forge/miniforge/releases/download/24.3.0-0/Mambaforge-24.3.0-0-Linux-x86_64.sh"
     bash Mambaforge-24.3.0-0-Linux-x86_64.sh -b -p /workspace/mambaforge && rm Mambaforge-24.3.0-0-Linux-x86_64.sh
-
     /workspace/mambaforge/bin/mamba init bash
     source ${HOME}/.bashrc
     mamba create -n qcenv -c bioconda multiqc -y 
-#    gp sync-done bundle
-    
-#- name: activate mamba
+#    gp sync-done bundle  
+# - name: activate mamba
 #  init: gp sync-await bundle # Wait for previous 'inits' to complete
 #  command: |
     cd /workspace
     /workspace/mambaforge/bin/mamba init bash
     source ~/.bashrc 
     gp sync-done bundle
-    
 #- name: install fastqc and stacks
 #  init: |
 #    gp sync-await bundle # Wait for previous 'inits' to complete
