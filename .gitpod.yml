@@ -10,17 +10,17 @@ tasks:
     /workspace/mambaforge/bin/mamba init bash
     source ${HOME}/.bashrc
     mamba create -n qcenv -c bioconda multiqc -y 
-#    gp sync-done bundle  
-# - name: activate mamba
-#  init: gp sync-await bundle # Wait for previous 'inits' to complete
-#  command: |
+    #    gp sync-done bundle  
+    # - name: activate mamba
+    #  init: gp sync-await bundle # Wait for previous 'inits' to complete
+    #  command: |
     cd /workspace
     /workspace/mambaforge/bin/mamba init bash
     source ~/.bashrc 
     gp sync-done bundle
-#- name: install fastqc and stacks
-#  init: |
-#    gp sync-await bundle # Wait for previous 'inits' to complete
+    #- name: install fastqc and stacks
+    #  init: |
+    #    gp sync-await bundle # Wait for previous 'inits' to complete
     mamba activate qcenv
     mkdir software
     cd software
