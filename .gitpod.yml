@@ -33,7 +33,7 @@ tasks:
     make
     export PATH=/workspace/bin:"$PATH"
     export PATH=/workspace/software/FastQC:"$PATH"
-    export PATH=/workspace/software/stacks-2.66/:"$PATH"
+    export PATH=/workspace/software/stacks-2.68:"$PATH"
     cd /workspace/gbs_workflow
     cd 00_fastq
     #download data
