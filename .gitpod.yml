@@ -39,6 +39,7 @@ tasks:
     #download data
     wget "https://unimi2013-my.sharepoint.com/:u:/g/personal/chiara_paleni_unimi_it/EXb7WHDhaKVEjhxMiPfw_ZABZ6DhDM8UGmmPTr0pVBMJUw?e=AuVorb&download=1" -O Sal_subsample.tar
     tar -xvf Sal_subsample.tar
+    rm Sal_subsample.tar
     cd ..
 
 workspaceLocation: "/workspace"
