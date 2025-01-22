@@ -37,9 +37,9 @@ tasks:
     cd /workspace/gbs_workflow
     cd 00_fastq
     #download data
-    wget "https://unimi2013-my.sharepoint.com/:u:/g/personal/chiara_paleni_unimi_it/EXb7WHDhaKVEjhxMiPfw_ZABZ6DhDM8UGmmPTr0pVBMJUw?e=AuVorb&download=1" -O Sal_subsample.tar
-    tar -xvf Sal_subsample.tar
-    rm Sal_subsample.tar
+    wget "https://unimi2013-my.sharepoint.com/:u:/g/personal/chiara_paleni_unimi_it/EUhSZcfuwulKoOzfC_ArUXcBKX7e4WfLvIUNSqpn9tNgvg?e=y3Wiqd&download=1" -O Sal_subsample_3M.tar
+    tar -xvf Sal_subsample_3M.tar
+    rm Sal_subsample_3M.tar
     cd ..
 
 workspaceLocation: "/workspace"
