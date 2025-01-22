@@ -4,7 +4,7 @@
 read1=$1;
 read2=$2;
 barcode_file=$3;
-process_radtags -1 "$1" -2 "$2" -o ./01_demulti/ -b "$barcode_file" -e apeKI -r --threads 20 -y 'gzfastq';
+process_radtags -1 "$1" -2 "$2" -o ./01_demulti/ -b "$barcode_file" -e apeKI -r --threads 4 -y 'gzfastq';
 cd 01_demulti
 if [ ! -d unpaired_reads ]; then
     mkdir unpaired_reads;
