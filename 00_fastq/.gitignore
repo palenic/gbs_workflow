@@ -1,5 +1,4 @@
 # Ignore everything in this directory
 *
 # Except this file
-!Sal_subsample_3M.tar.gz 
 !.gitignore
