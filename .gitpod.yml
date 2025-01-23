@@ -22,7 +22,7 @@ tasks:
     #  init: |
     #    gp sync-await bundle # Wait for previous 'inits' to complete
     mamba activate gbs_env
-    mamba install -c conda-forge -c bioconda ea-utils
+    mamba install -c conda-forge -c bioconda ea-utils -y
     mkdir software
     cd software
     wget "https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip"
