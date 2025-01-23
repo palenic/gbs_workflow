@@ -11,11 +11,11 @@ do
     reverse="$pair"".2_clean.fq.gz";
   #  echo "$forward";
   #  echo "$reverse";
-    /storage/users/palenic/software/stacks-2.66/process_radtags -1 "$mypath""$forward" -2 "$mypath""$reverse" -o ./03_filter/ -e apeKI -r -c -q \
+    process_radtags -1 "$mypath""$forward" -2 "$mypath""$reverse" -o ./03_filter/ -e apeKI -r -c -q \
       --adapter-1 AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAGACCGATCTCGTATGCCGTCTTCTGCTTG \
       --adapter-2 AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT --threads 20;
     cd 03_filter;
-    mv "process_radtags.""$myfolder"".log" "process_radtags.""$pair"".log";
+    mv "process_radtags.log" "process_radtags.""$pair"".log";
     cd ../;
 #    echo "process_radtags.""$myfolder"".log";
 done
@@ -36,6 +36,7 @@ done
 mv process_radtags* logs/;
 mv summary_* logs/;
 paste logs/summary_* > summary_total.txt;
-Rscript --no-init-file -e 'write.table(t(read.table("summary_total.txt")),"summary_transp.tsv",quote=F,col.names=F,row.names=F)'>/dev/null;
-mv summary_total.txt logs/;
+#Rscript --no-init-file -e 'write.table(t(read.table("summary_total.txt")),"summary_transp.tsv",quote=F,col.names=F,row.names=F)'>/dev/null;
+#mv summary_total.txt logs/;
 cd ..;
+

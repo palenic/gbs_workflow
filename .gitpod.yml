@@ -36,8 +36,7 @@ tasks:
     export PATH=/workspace/software/FastQC:"$PATH"
     export PATH=/workspace/software/stacks-2.68:"$PATH"
     export PATH=/workspace/software/stacks-2.68/scripts:"$PATH"
-    cd /workspace/gbs_workflow
-    cd 00_fastq
+    cd /workspace/gbs_workflow/00_fastq
     #download data
     wget "https://unimi2013-my.sharepoint.com/:u:/g/personal/chiara_paleni_unimi_it/EUhSZcfuwulKoOzfC_ArUXcBKX7e4WfLvIUNSqpn9tNgvg?e=y3Wiqd&download=1" -O Sal_subsample_3M.tar.gz
     tar -xvf Sal_subsample_3M.tar.gz
