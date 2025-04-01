@@ -22,7 +22,7 @@ tasks:
     #  init: |
     #    gp sync-await bundle # Wait for previous 'inits' to complete
     mamba activate gbs_env
-    mamba install -c conda-forge -c bioconda ea-utils -y
+#    mamba install -c conda-forge -c bioconda ea-utils -y
     mkdir software
     cd software
     wget "https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip"
@@ -38,7 +38,8 @@ tasks:
     export PATH=/workspace/software/stacks-2.68/scripts:"$PATH"
     cd /workspace/gbs_workflow/00_fastq
     #download data
-    wget "https://unimi2013-my.sharepoint.com/:u:/g/personal/chiara_paleni_unimi_it/EUhSZcfuwulKoOzfC_ArUXcBKX7e4WfLvIUNSqpn9tNgvg?e=y3Wiqd&download=1" -O Sal_subsample_3M.tar.gz
+    wget "https://unimi2013-my.sharepoint.com/:u:/g/personal/chiara_paleni_unimi_it/EUhSZcfuwulKoOzfC_ArUXcBKX7e4WfLvIUNSqpn9tNgvg?e=y3Wiqd&download=1" \
+	-O Sal_subsample_3M.tar.gz
     tar -xvf Sal_subsample_3M.tar.gz
     rm Sal_subsample_3M.tar.gz
     cd ..
