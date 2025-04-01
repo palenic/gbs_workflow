@@ -32,6 +32,7 @@ tasks:
     cd stacks-2.68
     ./configure
     make
+    make install
     export PATH=/workspace/bin:"$PATH"
     export PATH=/workspace/software/FastQC:"$PATH"
     export PATH=/workspace/software/stacks-2.68:"$PATH"
