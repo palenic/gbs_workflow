@@ -13,7 +13,7 @@ do
   #  echo "$reverse";
     process_radtags -1 "$mypath""$forward" -2 "$mypath""$reverse" -o ./03_filter/ -e apeKI -r -c -q \
       --adapter-1 AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAGACCGATCTCGTATGCCGTCTTCTGCTTG \
-      --adapter-2 AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT --threads 20;
+      --adapter-2 AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT --threads 4;
     cd 03_filter;
     mv "process_radtags.log" "process_radtags.""$pair"".log";
     cd ../;
