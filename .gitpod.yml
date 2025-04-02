@@ -30,7 +30,7 @@ tasks:
     unzip fastqc_v0.12.1.zip
     tar -xvzf stacks-2.68.tar.gz
     cd stacks-2.68
-    ./configure --prefix=/workspace/software/stacks-2.68
+    ./configure --prefix=/workspace/bin
     make
     make install
     export PATH=/workspace/bin:"$PATH"
