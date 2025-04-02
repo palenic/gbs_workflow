@@ -6,5 +6,5 @@ populations=$2;
 
 mkdir -p 04_denovo; # creates the 04_denovo folder if not already created
 
-denovo_map.pl --samples "$mypath" --popmap ./"$populations" --out-path 04_denovo/ --paired -X "ustacks: --force-diff-len" -X "populations: --vcf" --threads 4;
+denovo_map.pl --samples "$mypath" --popmap ./"$populations" --out-path 04_denovo/ --paired -X "ustacks: --force-diff-len" -X "populations: --vcf --fstats" --threads 4;
 

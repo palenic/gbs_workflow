@@ -13,9 +13,10 @@ do
   #  echo "$reverse";
     process_radtags -1 "$mypath""$forward" -2 "$mypath""$reverse" -o ./03_filter/ -e apeKI -r -c -q \
       --adapter-1 AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAGACCGATCTCGTATGCCGTCTTCTGCTTG \
-      --adapter-2 AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT --threads 4;
+      --adapter-2 AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT --threads 4 \
+      --basename "$pair";
     cd 03_filter;
-    mv "process_radtags.log" "process_radtags.""$pair"".log";
+    #mv "process_radtags.log" "process_radtags.""$pair"".log";
     cd ../;
 #    echo "process_radtags.""$myfolder"".log";
 done
@@ -31,12 +32,12 @@ for pair in $(cat "../""$readpairs")
 do
     touch "summary_""$pair";
     echo "$pair" > "summary_""$pair";
-    stacks-dist-extract "process_radtags.""$pair"".log" total_raw_read_counts | cut -f 1,3 --complement >> "summary_""$pair";
+    stacks-dist-extract "$pair"".log" total_raw_read_counts | cut -f 1,3 --complement >> "summary_""$pair";
 done
-mv process_radtags* logs/;
+#mv process_radtags* logs/;
+mv *.log logs/;
 mv summary_* logs/;
 paste logs/summary_* > summary_total.txt;
 #Rscript --no-init-file -e 'write.table(t(read.table("summary_total.txt")),"summary_transp.tsv",quote=F,col.names=F,row.names=F)'>/dev/null;
 #mv summary_total.txt logs/;
 cd ..;
-
