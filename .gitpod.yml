@@ -43,5 +43,8 @@ tasks:
     tar -xvzf Sal_subsample_3M.tar.gz
     rm Sal_subsample_3M.tar.gz
     cd ..
-
+  command: |
+    \workspace/mambaforge/bin/mamba init bash
+    source ${HOME}/.bashrc
+    mamba activate gbs_env
 workspaceLocation: "/workspace"
