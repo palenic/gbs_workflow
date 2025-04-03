@@ -7,8 +7,8 @@ myfolder="$(echo $mypath | rev | cut -d "/" -f 2 | rev)";
 for pair in $(cat "$readpairs")
 do
     echo "filtering $pair...";
-    forward="$pair"".1_clean.fq.gz";
-    reverse="$pair"".2_clean.fq.gz";
+    forward="$pair"".1.fq.gz";
+    reverse="$pair"".2.fq.gz";
   #  echo "$forward";
   #  echo "$reverse";
     process_radtags -1 "$mypath""$forward" -2 "$mypath""$reverse" -o ./03_filter/ -e apeKI -r -c -q \
