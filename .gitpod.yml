@@ -4,7 +4,6 @@ image: gitpod/workspace-java-23
 tasks:
 - name: install mamba and multiqc
   init: |
-  command:
     cd /workspace
     wget "https://github.com/conda-forge/miniforge/releases/download/24.3.0-0/Mambaforge-24.3.0-0-Linux-x86_64.sh"
     bash Mambaforge-24.3.0-0-Linux-x86_64.sh -b -p /workspace/mambaforge && rm Mambaforge-24.3.0-0-Linux-x86_64.sh
