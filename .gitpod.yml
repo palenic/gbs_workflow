@@ -47,4 +47,6 @@ tasks:
     /workspace/mambaforge/bin/mamba init bash
     source ${HOME}/.bashrc
     mamba activate gbs_env
+    export PATH=/workspace/bin:"$PATH"
+    export PATH=/workspace/software/FastQC:"$PATH"
 workspaceLocation: "/workspace"
